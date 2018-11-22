@@ -25,7 +25,7 @@ SECRET_KEY = 'u63%&t#x8mqk7+)27-oo8fd5vx*ft6=!ej6_y7z=#yco_8un(c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['collegebuddy.pythonanywhere.com']
 
 
 # Application definition
