@@ -19,6 +19,8 @@ from client import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/book/<int:count>',views.apiBook)
+    path('api/book/<int:count>',views.apiBook),
+    path('api/FA',views.apiFA),
+    path('api/book/<slug:isbn>',views.getBook)
 
 ]
