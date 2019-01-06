@@ -21,3 +21,6 @@ class Bookissue(models.Model):
     ACCNO = models.CharField(max_length=16)
     UID  = models.CharField(max_length=120,null=True)
     ED = models.DateTimeField(default=datetime.now()+timedelta(days=7))
+
+class TokenData(models.Model):
+    token = models.CharField(max_length=80)

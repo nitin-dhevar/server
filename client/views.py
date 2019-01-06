@@ -67,3 +67,43 @@ def getBook(request,isbn):
     o = s.strip("[]").replace("\\","")
     return django.http.HttpResponse(o, content_type="application/json")
     #return JsonResponse(o, safe=False)
+
+def sendNotify(message, title, token):
+    import requests
+    API_ENDPOINT = "https://exp.host/--/api/v2/push/send"
+    data = {"to": token,"sound": "default","title":title,"body": message}
+    r = requests.post(url = API_ENDPOINT, data = data)
+    print(r.json())
+
+def addToken(request):
+    token = request.POST['token']
+    tData = TokenData.objects.create(token=token)
+    return HttpResponse("done")
+
+def sendAPI(request, title, msg):
+    print(title)
+    print(msg)
+    tData = TokenData.objects.all()
+    for i in tData:
+        sendNotify(msg, title, i.token)
+    return HttpResponse("...Sending Response")
+
+def listn(request):
+    data1 = {
+        'title': 'Test-1',
+        'body': 'Sample Test 1 ',
+    }
+    data2 = {
+        'title': 'Test-2',
+        'body': 'Sample Test 2 ',
+    }
+    data3 = {
+        'title': 'Test-3',
+        'body': 'Sample Test 3 ',
+    }
+    data = []
+    data.append(data1)
+    data.append(data2)
+    data.append(data3)
+    return JsonResponse(data,safe=False)
+
