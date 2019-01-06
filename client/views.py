@@ -90,16 +90,19 @@ def sendAPI(request, title, msg):
 
 def listn(request):
     data1 = {
+        'id' : 1,
         'title': 'Test-1',
-        'body': 'Sample Test 1 ',
+        'body': 'Want to learn more? I have free mini-courses over on my website. These are 30 minute videos that cover new and interesting topics.',
     }
     data2 = {
+        'id': 2,
         'title': 'Test-2',
-        'body': 'Sample Test 2 ',
+        'body': 'Want to learn more? I have free mini-courses over on my website. These are 30 minute videos that cover new and interesting topics.',
     }
     data3 = {
+        'id': 3,
         'title': 'Test-3',
-        'body': 'Sample Test 3 ',
+        'body': 'Want to learn more? I have free mini-courses over on my website. These are 30 minute videos that cover new and interesting topics.',
     }
     data = []
     data.append(data1)
