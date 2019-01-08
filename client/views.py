@@ -44,6 +44,15 @@ def apiFA(request):
     #print(b_list)
     return JsonResponse(b_list, safe=False)
 
+
+def test(request):
+    books = Book.objects.all()[:10].values()
+    b_list = list(books)  # important: convert the QuerySet to a list object
+    #print(b_list)
+    return JsonResponse(b_list, safe=False)
+
+
+    
 def apiBook(request,count):
     if count > 0 and count < 1001:
         pass

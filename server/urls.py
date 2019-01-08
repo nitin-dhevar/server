@@ -24,6 +24,7 @@ urlpatterns = [
     path('api/add/token',views.addToken),
     path('api/notify/<slug:title>/<slug:msg>', views.sendAPI),
     path('api/book/<slug:isbn>',views.getBook),
-    path('api/notification',views.listn)
+    path('api/notification',views.listn),
+     path('api/test',views.tests),
 
 ]
